@@ -1,7 +1,11 @@
 from langchain_ollama import OllamaEmbeddings
 from langchain_community.embeddings.bedrock import BedrockEmbeddings
+import os
+from dotenv import load_dotenv
 
-URL = "http://172.19.48.1"
+load_dotenv()
+
+URL = os.getenv("OLLAMA_URL")
 
 def get_embedding_function():
     # embeddings = BedrockEmbeddings(
